@@ -7,7 +7,6 @@
     <groupId>gatling-sample</groupId>
     <artifactId>gatling-sample</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -15,7 +14,6 @@
         <gatling-plugin.version>2.2.4</gatling-plugin.version>
         <io.gatling.highcharts.version>2.2.4</io.gatling.highcharts.version>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>io.gatling.highcharts</groupId>
@@ -42,48 +40,58 @@
                             <!--Use the following to execute individual Simulation files-->
                             <!--Execute with mvn test -Pperformance-->
                             <!--<execution>-->
-                                <!--<id>GETAgainSimulation</id>-->
-                                <!--<configuration>-->
-                                    <!--<simulationClass>com.scala.tests.GETAgainSimulation</simulationClass>-->
-                                <!--</configuration>-->
-                                <!--<phase>test</phase>-->
-                                <!--<goals>-->
-                                    <!--<goal>execute</goal>-->
-                                <!--</goals>-->
+                            <!--<id>GETAgainSimulation</id>-->
+                            <!--<configuration>-->
+                            <!--<simulationClass>com.scala.tests.GETAgainSimulation</simulationClass>-->
+                            <!--</configuration>-->
+                            <!--<phase>test</phase>-->
+                            <!--<goals>-->
+                            <!--<goal>execute</goal>-->
+                            <!--</goals>-->
                             <!--</execution>-->
                             <!--<execution>-->
-                                <!--<id>GETSimulation</id>-->
-                                <!--<configuration>-->
-                                    <!--<simulationClass>com.scala.tests.GETSimulation</simulationClass>-->
-                                <!--</configuration>-->
-                                <!--<phase>test</phase>-->
-                                <!--<goals>-->
-                                    <!--<goal>execute</goal>-->
-                                <!--</goals>-->
+                            <!--<id>GETSimulation</id>-->
+                            <!--<configuration>-->
+                            <!--<simulationClass>com.scala.tests.GETSimulation</simulationClass>-->
+                            <!--</configuration>-->
+                            <!--<phase>test</phase>-->
+                            <!--<goals>-->
+                            <!--<goal>execute</goal>-->
+                            <!--</goals>-->
                             <!--</execution>-->
                             <!--<execution>-->
-                                <!--<id>POSTSimulation</id>-->
-                                <!--<configuration>-->
-                                    <!--<simulationClass>com.scala.tests.POSTSimulation</simulationClass>-->
-                                <!--</configuration>-->
-                                <!--<phase>test</phase>-->
-                                <!--<goals>-->
-                                    <!--<goal>execute</goal>-->
-                                <!--</goals>-->
-                            <!--</execution>-->
+                            <!--<id>POSTSimulation</id>-->
+                            <!--<configuration>-->
+                            <!--<simulationClass>com.scala.tests.POSTSimulation</simulationClass>-->
+                            <!--</configuration>-->
+                            <!--<phase>test</phase>-->
+                            <!--<goals>-->
+                            <!--<goal>execute</goal>-->
+                            <!--</goals>-->
+
+                            <execution>
+                                <id>WebsocketSimulation</id>
+                                <configuration>
+                                    <simulationClass>com.scala.tests.WebsocketSimulation</simulationClass>
+                                </configuration>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>execute</goal>
+                                </goals>
+                            </execution>
 
                             <!--Use the following to run all Simulations with one command-->
                             <!--Execute with mvn test -Pperformance-->
                             <!--<execution>-->
-                                <!--<id>All-Simulations</id>-->
-                                <!--<configuration>-->
-                                    <!--<simulationsFolder>src/test/scala/com/scala/tests</simulationsFolder>-->
-                                    <!--<runMultipleSimulations>true</runMultipleSimulations>-->
-                                <!--</configuration>-->
-                                <!--<phase>test</phase>-->
-                                <!--<goals>-->
-                                    <!--<goal>execute</goal>-->
-                                <!--</goals>-->
+                            <!--<id>All-Simulations</id>-->
+                            <!--<configuration>-->
+                            <!--<simulationsFolder>src/test/scala/com/scala/tests</simulationsFolder>-->
+                            <!--<runMultipleSimulations>true</runMultipleSimulations>-->
+                            <!--</configuration>-->
+                            <!--<phase>test</phase>-->
+                            <!--<goals>-->
+                            <!--<goal>execute</goal>-->
+                            <!--</goals>-->
                             <!--</execution>-->
                         </executions>
                     </plugin>
