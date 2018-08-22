@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>gatling-sample</groupId>
+    <artifactId>gatling-sample</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <gatling-plugin.version>2.2.4</gatling-plugin.version>
+        <io.gatling.highcharts.version>2.2.4</io.gatling.highcharts.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.gatling.highcharts</groupId>
+            <artifactId>gatling-charts-highcharts</artifactId>
+            <version>${io.gatling.highcharts.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <profiles>
+        <profile>
+            <id>performance</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>io.gatling</groupId>
+                        <artifactId>gatling-maven-plugin</artifactId>
+                        <version>${gatling-plugin.version}</version>
+                        <configuration>
+                            <resultsFolder>${project.basedir}/target/gatling</resultsFolder>
+                            <configFolder>${project.basedir}/src/test/resources</configFolder>
+                            <dataFolder>${project.basedir}/src/test/resources/data</dataFolder>
+                        </configuration>
+                        <executions>
+                            <!--Use the following to execute individual Simulation files-->
+                            <!--Execute with mvn test -Pperformance-->
+                            <!--<execution>-->
+                                <!--<id>GETAgainSimulation</id>-->
+                                <!--<configuration>-->
+                                    <!--<simulationClass>com.scala.tests.GETAgainSimulation</simulationClass>-->
+                                <!--</configuration>-->
+                                <!--<phase>test</phase>-->
+                                <!--<goals>-->
+                                    <!--<goal>execute</goal>-->
+                                <!--</goals>-->
+                            <!--</execution>-->
+                            <!--<execution>-->
+                                <!--<id>GETSimulation</id>-->
+                                <!--<configuration>-->
+                                    <!--<simulationClass>com.scala.tests.GETSimulation</simulationClass>-->
+                                <!--</configuration>-->
+                                <!--<phase>test</phase>-->
+                                <!--<goals>-->
+                                    <!--<goal>execute</goal>-->
+                                <!--</goals>-->
+                            <!--</execution>-->
+                            <!--<execution>-->
+                                <!--<id>POSTSimulation</id>-->
+                                <!--<configuration>-->
+                                    <!--<simulationClass>com.scala.tests.POSTSimulation</simulationClass>-->
+                                <!--</configuration>-->
+                                <!--<phase>test</phase>-->
+                                <!--<goals>-->
+                                    <!--<goal>execute</goal>-->
+                                <!--</goals>-->
+                            <!--</execution>-->
+
+                            <!--Use the following to run all Simulations with one command-->
+                            <!--Execute with mvn test -Pperformance-->
+                            <!--<execution>-->
+                                <!--<id>All-Simulations</id>-->
+                                <!--<configuration>-->
+                                    <!--<simulationsFolder>src/test/scala/com/scala/tests</simulationsFolder>-->
+                                    <!--<runMultipleSimulations>true</runMultipleSimulations>-->
+                                <!--</configuration>-->
+                                <!--<phase>test</phase>-->
+                                <!--<goals>-->
+                                    <!--<goal>execute</goal>-->
+                                <!--</goals>-->
+                            <!--</execution>-->
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
